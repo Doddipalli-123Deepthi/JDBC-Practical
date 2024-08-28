@@ -24,33 +24,45 @@ public class WithStatementIInterface {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-		} finally {
+		} finally
+		{
 			// Step 7: Close the connection
-			try {
+			try
+			{
 				if (conn != null)
 					conn.close();
-			} catch (Exception e) {
+			} catch (Exception e) 
+			{
 				e.printStackTrace();
 			}
 		}
 	}
 
 	// Method to create a table
-	public static void createTable(Connection conn) {
+	public static void createTable(Connection conn) 
+	{
 		Statement stmt = null;
-		try {
+		try
+		{
 			String createTableSQL = "CREATE TABLE Student (" + "ID INT PRIMARY KEY AUTO_INCREMENT, "
 					+ "FirstName VARCHAR(100), " + "LastName VARCHAR(100), " + "Age INT)";
 			stmt = conn.createStatement();
 			stmt.execute(createTableSQL);
 			System.out.println("Table 'Student' created successfully.");
-		} catch (Exception e) {
+		} 
+		catch (Exception e) 
+		{
 			e.printStackTrace();
-		} finally {
-			try {
+		}
+		finally 
+		{
+			try
+			{
 				if (stmt != null)
 					stmt.close();
-			} catch (Exception e) {
+			} 
+			catch (Exception e)
+			{
 				e.printStackTrace();
 			}
 		}
